@@ -1,0 +1,163 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #2c394d, #29384b, #5792da);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+    50% {
+        background-position: 150% 150%;
+    }
+    0% {
+        background-position: 200% 200%;
+    }
+}
+
+header {
+    position: fixed; /* Fixes the header at the bottom-left corner */
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    letter-spacing: 8px; /* Spaced-out letters */
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #4f93e6;
+    margin: 0;
+}
+
+header h2 {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin: 0;
+    margin-top: 8px;
+}
+
+/* Main Content */
+main {
+    margin-top: 100vh; /* Pushes all sections below the header */
+    padding: 20px;
+}
+
+/* About Me Section */
+#about {
+    max-width: 900px;
+    margin: 2rem auto;
+    text-align: center;
+    background: #1f2a37;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.about-me-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.about-me-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+.about-me-image img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #4f93e6;
+}
+
+/* Skills Section */
+#skills {
+    margin: 3rem auto;
+    max-width: 900px;
+    text-align: center;
+}
+
+#skills h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #4f93e6;
+}
+
+.skill {
+    margin: 1.2rem 0;
+    text-align: left;
+}
+
+.skill p {
+    margin-bottom: 0.5rem;
+    color: #ddd;
+}
+
+.progress-bar {
+    background: #2c3e50;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    height: 12px;
+}
+
+.progress {
+    background: linear-gradient(to right, #4f93e6, #1e6fb6);
+    height: 100%;
+    transition: width 0.5s ease;
+}
+
+/* Server Status Section */
+#server-status {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    background: #1f2a37;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#server-status h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #4f93e6;
+}
+
+#status {
+    font-size: 1.2rem;
+    color: #4caf50;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    background: #1f2a37;
+    color: #ccc;
+    font-size: 0.9rem;
+    border-top: 1px solid #2c3e50;
+}
