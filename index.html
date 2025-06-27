@@ -48,12 +48,10 @@
                     <h1 class="sub-title">About Me</h1>
                     <p class="desc">I’m a Computer Engineering student at TMU 
                         with a strong passion for software development, 
-                        particularly in low-level systems programming 
-                        and game development. I’m also deeply interested 
-                        in AI and machine learning, and believe that 
-                        it holds the potential to drive innovation, 
-                        ultimately transforming the way we experience
-                         the digital world.
+                        particularly in full-stack development. I have been
+                        exploring various technologies and frameworks to build
+                        dynamic and responsive web applications. I have showcased
+                        my skills through several projects, which you can find below.
                     </p>
 
                     <div class="tab-titles">
@@ -63,10 +61,11 @@
                     </div>
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
-                            <li><span>C/C++</span><br>Computer Graphics, Video Game Development, Real-Time systems</li>
-                            <li><span>Python</span><br>Deep Learning, Neural Networks, Computer Vision, Generative AI</li>
-                            <li><span>Lua</span><br>Video Game Development</li>
-                            <li><span>VHDL</span><br>Digital Circuits, Microprocessors</li>
+                            <li><span>HTML/CSS</span><br>Responsive Web Design, Flexbox, Grid, Animations</li>
+                            <li><span>JavaScript</span><br>DOM Manipulation, Fetch API</li>
+                            <li><span>Front-End</span><br>React (Component-based UI, State Management)</li>
+                            <li><span>Back-End</span><br>Node.js, Express, REST API</li>
+                            <li><span>Databases</span><br>NoSQL Databases (MongoDB/Mongoose)</li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="experience">
@@ -92,25 +91,23 @@
                 <div>
                     <h2>Programming Languages</h2>
                     <div class="icon-row">
-                        <img src="assets/icons/cpp.png" alt="C++">
-                        <img src="assets/icons/c.png" alt="C">
+                        <img src="assets/icons/HTML.png" alt="HTML">
+                        <img src="assets/icons/css.png" alt="CSS">
+                        <img src="assets/icons/js.png" alt="JavaScript">
                         <img src="assets/icons/python.png" alt="Python">
                         <img src="assets/icons/java.png" alt="Java">
-                        <img src="assets/icons/lua.png" alt="Lua">
                     </div>
                 </div>
                 <div>
                     <h2>Technologies, Tools & Libraries</h2>
                     <div class="icon-row">
-                        <img src="assets/icons/unity.png" alt="Unity">
-                        <img src="assets/icons/ue.png" alt="Unreal Engine">
-                        <img src="assets/icons/vs.png" alt="Visual Studio">
-                        <img src="assets/icons/vulkan.png" alt="Vulkan">
-                        <img src="assets/icons/openGL.png" alt="OpenGL">
+                        <img src="assets/icons/vscode.png" alt="Visual Studio Code">
+                        <img src="assets/icons/nodejs.png" alt="Node.js">
+                        <img src="assets/icons/React.png" alt="React">
+                        <img src="assets/icons/MongoDB.png" alt="MongoDB">
                         <img src="assets/icons/git-logo.png" alt="Git">
-                        <img src="assets/icons/docker.png" alt="Docker">
-                        <img src="assets/icons/pytorch.png" alt="Pytorch">
-                        <img src="assets/icons/numpy.png" alt="NumPy">
+                        <img src="assets/icons/github.png" alt="GitHub">
+                        <img src="assets/icons/Jira.png" alt="Jira">
                         <img src="assets/icons/linux.png" alt="Linux">
                     </div>
                 </div>
@@ -133,7 +130,7 @@
                 <div class="work">
                     <img src="assets/placeholder.png" alt="">
                     <div class="layer">
-                        <h3>Real-Time RayTracer</h3>
+                        <h3>3D Model Sharing Website</h3>
                         <p></p>
                         <a href="#"><img src="assets/icons/link.png" alt="Link"></a>
                     </div>
@@ -141,7 +138,7 @@
                 <div class="work">
                     <img src="assets/placeholder.png" alt="">
                     <div class="layer">
-                        <h3>Unity Vehicle Physics System</h3>
+                        <h3>Sokoban Game</h3>
                         <p></p>
                         <a href="#"><img src="assets/icons/link.png" alt="Link"></a>
                     </div>
@@ -177,7 +174,7 @@
     </div>
 
     <footer class="copyright">
-        <p>Copyright © 2025 Anshuman Dhillon.</p>
+        <p>Copyright © <span id="year"></span> Anshuman Dhillon.</p>
         <p>Background GIF from <a href="https://pixabay.com/gifs/tech-background-design-pattern-18050/" target="_blank">Pixabay</a></p>
         <p>All product names, logos, and brands are property of their respective owners.</p>
     </footer>
@@ -233,6 +230,10 @@
             })
             .catch(error => console.error('Error!', error.message))
         })
+    </script>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

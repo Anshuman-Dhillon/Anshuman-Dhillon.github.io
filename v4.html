@@ -4,11 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio - Game Development</title>
+    <title>Personal Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- ...existing code... -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="assets/background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="assets/ad.png" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#Skills">Skills</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="section">
+                <div class="header-text">
+                    <p>Ambitious Learner</p>
+                    <h1>Hi, I'm <span id="typing-text"></span></h1>
+                </div>
+                <div class="header-image">
+                    <img src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="about">
         <div class="container">
             <div class="row">
@@ -35,9 +64,9 @@
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
                             <li><span>C/C++</span><br>Computer Graphics, Video Game Development, Real-Time systems</li>
+                            <li><span>Python</span><br>Deep Learning, Neural Networks, Computer Vision, Generative AI</li>
                             <li><span>Lua</span><br>Video Game Development</li>
-                            <li><span>Unity/Unreal Engine</span><br>Game Engines, Scripting, Level Design</li>
-                            <li><span>OpenGL/Vulkan</span><br>Graphics APIs, Rendering Pipelines</li>
+                            <li><span>VHDL</span><br>Digital Circuits, Microprocessors</li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="experience">
@@ -54,6 +83,160 @@
             </div>
         </div>
     </div>
-    <!-- ...existing code... -->
+
+    <div id="Skills">
+        <div class="container">
+            <h1 class="sub-title">My Skills</h1>
+
+            <div class="skills-list">
+                <div>
+                    <h2>Programming Languages</h2>
+                    <div class="icon-row">
+                        <img src="assets/icons/cpp.png" alt="C++">
+                        <img src="assets/icons/c.png" alt="C">
+                        <img src="assets/icons/python.png" alt="Python">
+                        <img src="assets/icons/java.png" alt="Java">
+                        <img src="assets/icons/lua.png" alt="Lua">
+                    </div>
+                </div>
+                <div>
+                    <h2>Technologies, Tools & Libraries</h2>
+                    <div class="icon-row">
+                        <img src="assets/icons/unity.png" alt="Unity">
+                        <img src="assets/icons/ue.png" alt="Unreal Engine">
+                        <img src="assets/icons/vs.png" alt="Visual Studio">
+                        <img src="assets/icons/vulkan.png" alt="Vulkan">
+                        <img src="assets/icons/openGL.png" alt="OpenGL">
+                        <img src="assets/icons/git-logo.png" alt="Git">
+                        <img src="assets/icons/docker.png" alt="Docker">
+                        <img src="assets/icons/pytorch.png" alt="Pytorch">
+                        <img src="assets/icons/numpy.png" alt="NumPy">
+                        <img src="assets/icons/linux.png" alt="Linux">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="assets/placeholder.png" alt="">
+                    <div class="layer">
+                        <h3>Real-Time Digit Classification AI</h3>
+                        <p></p>
+                        <a href="#"><img src="assets/icons/link.png" alt="Link"></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="assets/placeholder.png" alt="">
+                    <div class="layer">
+                        <h3>Real-Time RayTracer</h3>
+                        <p></p>
+                        <a href="#"><img src="assets/icons/link.png" alt="Link"></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="assets/placeholder.png" alt="">
+                    <div class="layer">
+                        <h3>Unity Vehicle Physics System</h3>
+                        <p></p>
+                        <a href="#"><img src="assets/icons/link.png" alt="Link"></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more projects</a>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><img src="assets/icons/email.png" alt="">anshumandhillon@gmail.com</p>
+
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/anshuman-dhillon/" target="_blank"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+                        <a href="https://github.com/Anshuman-Dhillon" target="_blank"><img src="assets/icons/github.png" alt="GitHub"></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="copyright">
+        <p>Copyright © <span id="year"></span> Anshuman Dhillon.</p>
+        <p>Background GIF from <a href="https://pixabay.com/gifs/tech-background-design-pattern-18050/" target="_blank">Pixabay</a></p>
+        <p>All product names, logos, and brands are property of their respective owners.</p>
+    </footer>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+    <script>
+        const text = "Anshuman";
+        const span = document.getElementById("typing-text");
+        let i = 0;
+
+        function type() {
+            if (i < text.length) {
+                span.textContent += text.charAt(i);
+                i++;
+                setTimeout(type, 150); // typing speed
+            }
+        }
+
+        type();
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzvUDKCLO3J5wrBqXInByVLVJ7WBsvfC6BMsFVbAWKljV1K32_JVIMoHV5_lbrIXck9/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message Sent Successfully!"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                }, 5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
