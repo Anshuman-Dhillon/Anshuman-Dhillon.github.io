@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio - Full Stack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ...existing code... -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="assets/image_nobg.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p class="desc">I’m a Computer Engineering student at TMU 
+                        with a strong passion for software development, 
+                        particularly in low-level systems programming 
+                        and game development. I’m also deeply interested 
+                        in AI and machine learning, and believe that 
+                        it holds the potential to drive innovation, 
+                        ultimately transforming the way we experience
+                         the digital world.
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>HTML/CSS</span><br>Responsive Web Design, Flexbox, Grid, Animations</li>
+                            <li><span>JavaScript</span><br>ES6+, DOM Manipulation, Fetch API, AJAX</li>
+                            <li><span>React.js</span><br>Component-based UI, State Management</li>
+                            <li><span>Node.js</span><br>Express, REST APIs, Server-side Scripting</li>
+                            <li><span>MongoDB</span><br>NoSQL Databases, Mongoose</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>February 2025 - April 2025</span><br>Quality Assurance (Game Tester), Dough Dough Digital Inc.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2023 - 2028</span><br>Bachelor of Engineering (BEng): Computer Engineering, Toronto Metropolitan University</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ...existing code... -->
+</body>
+</html>
