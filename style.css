@@ -21,10 +21,16 @@ body{
     position: fixed;
     top: 0;
     left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
+    object-position: center center;
+    z-index: -1;
+    background-color: #111; /* fallback */
+    filter: none; /* or try blur(0.5px) if you want a soft effect */
+    pointer-events: none;
 }
 .container{
     padding: 10px 10%;
