@@ -46,7 +46,7 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p class="desc">I’m a Computer Engineering student at TMU 
+                    <p class="desc">I'm a Computer Engineering student at TMU 
                         with a strong passion for software development, 
                         particularly in full-stack development. I have been
                         exploring various technologies and frameworks to build
@@ -197,70 +197,199 @@
         }
     </script>
 
-    <script src="portfolio-config.js"></script>
     <script>
-    // Get URL parameter
-    function getUrlParameter(name) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(name) || 'general';
-    }
-
-    // Update content based on specialization
-    function updatePortfolioContent(spec) {
-        if (!window.portfolioContent || !window.portfolioContent[spec]) return;
-        
-        const content = window.portfolioContent[spec];
-        
-        // Clear and retype name
-        document.getElementById('typing-text').textContent = '';
-        typeText(content.title);
-        
-        // Update subtitle
-        document.querySelector('.header-text p').textContent = content.subtitle;
-        
-        // Update about description
-        document.querySelector('.desc').textContent = content.about;
-        
-        // Update skills in About section
-        const skillsList = document.querySelector('#skills ul');
-        skillsList.innerHTML = '';
-        Object.entries(content.skills).forEach(([skill, description]) => {
-            const li = document.createElement('li');
-            li.innerHTML = `<span>${skill}</span><br>${description}`;
-            skillsList.appendChild(li);
-        });
-        
-        // Update skill icons sections
-        if (content.skillIcons) {
-            const skillsContainer = document.querySelector('.skills-list');
-            skillsContainer.innerHTML = '';
+        // Embedded portfolio configurations (obfuscated)
+        const pc = {
+            g: {
+                t: "Anshuman",
+                s: "Ambitious Learner",
+                a: "I'm a Computer Engineering student at TMU with a strong passion for software development, particularly in full-stack development. I have been exploring various technologies and frameworks to build dynamic and responsive web applications. I have showcased my skills through several projects, which you can find below.",
+                sk: {
+                    "HTML/CSS": "Responsive Web Design, Flexbox, Grid, Animations",
+                    "JavaScript": "DOM Manipulation, Fetch API",
+                    "Front-End": "React (Component-based UI, State Management)",
+                    "Back-End": "Node.js, Express, REST API",
+                    "Databases": "NoSQL Databases (MongoDB/Mongoose)"
+                },
+                si: {
+                    "Programming Languages": [
+                        { n: "HTML", src: "assets/icons/HTML.png" },
+                        { n: "CSS", src: "assets/icons/css.png" },
+                        { n: "JavaScript", src: "assets/icons/js.png" },
+                        { n: "Python", src: "assets/icons/python.png" },
+                        { n: "Java", src: "assets/icons/java.png" }
+                    ],
+                    "Technologies, Tools & Libraries": [
+                        { n: "Visual Studio Code", src: "assets/icons/vscode.png" },
+                        { n: "Node.js", src: "assets/icons/nodejs.png" },
+                        { n: "React", src: "assets/icons/React.png" },
+                        { n: "MongoDB", src: "assets/icons/MongoDB.png" },
+                        { n: "Git", src: "assets/icons/git-logo.png" },
+                        { n: "GitHub", src: "assets/icons/github.png" },
+                        { n: "Jira", src: "assets/icons/Jira.png" },
+                        { n: "Linux", src: "assets/icons/linux.png" }
+                    ]
+                },
+                p: [
+                    { t: "Real-Time Digit Classification AI", d: "Machine learning model for real-time digit recognition", l: "#" },
+                    { t: "3D Model Sharing Website", d: "Full-stack platform for 3D model sharing and viewing", l: "#" },
+                    { t: "Sokoban Game", d: "Classic puzzle game with modern implementation", l: "#" }
+                ]
+            },
             
-            Object.entries(content.skillIcons).forEach(([categoryName, icons]) => {
-                const skillDiv = document.createElement('div');
-                skillDiv.innerHTML = `
-                    <h2>${categoryName}</h2>
-                    <div class="icon-row">
-                        ${icons.map(icon => 
-                            `<img src="${icon.src}" alt="${icon.name}" title="${icon.name}">`
-                        ).join('')}
-                    </div>
-                `;
-                skillsContainer.appendChild(skillDiv);
-            });
+            w: {
+                t: "Anshuman",
+                s: "Full-Stack Web Developer", 
+                a: "I'm a Computer Engineering student specializing in modern web development. With expertise in React, Node.js, and full-stack architecture, I build scalable web applications that deliver exceptional user experiences. My focus is on creating responsive, performant, and accessible web solutions.",
+                sk: {
+                    "Frontend": "React, Next.js, TypeScript, Tailwind CSS",
+                    "Backend": "Node.js, Express, REST APIs, GraphQL",
+                    "Database": "MongoDB, PostgreSQL, Redis",
+                    "DevOps": "Docker, AWS, CI/CD, Git",
+                    "Testing": "Jest, Cypress, Unit & Integration Testing"
+                },
+                si: {
+                    "Frontend Technologies": [
+                        { n: "HTML", src: "assets/icons/HTML.png" },
+                        { n: "CSS", src: "assets/icons/css.png" },
+                        { n: "JavaScript", src: "assets/icons/js.png" },
+                        { n: "React", src: "assets/icons/React.png" }
+                    ],
+                    "Backend & DevOps": [
+                        { n: "Node.js", src: "assets/icons/nodejs.png" },
+                        { n: "MongoDB", src: "assets/icons/MongoDB.png" },
+                        { n: "Git", src: "assets/icons/git-logo.png" },
+                        { n: "GitHub", src: "assets/icons/github.png" },
+                        { n: "Visual Studio Code", src: "assets/icons/vscode.png" }
+                    ]
+                },
+                p: [
+                    { t: "E-Commerce Platform", d: "Full-stack online store with payment integration and admin dashboard", l: "#" },
+                    { t: "Real-Time Chat Application", d: "WebSocket-based messaging platform with user authentication", l: "#" },
+                    { t: "Task Management System", d: "Collaborative project management tool with real-time updates", l: "#" }
+                ]
+            },
+            
+            gd: {
+                t: "Anshuman",
+                s: "Game Developer & QA Specialist",
+                a: "I'm a Computer Engineering student with a passion for game development and quality assurance. With hands-on experience as a QA Game Tester at Dough Dough Digital Inc., I combine technical programming skills with a deep understanding of game mechanics and user experience.",
+                sk: {
+                    "Game Engines": "Unity, Unreal Engine, Godot",
+                    "Programming": "C#, C++, Python, Game Logic",
+                    "QA Testing": "Bug Detection, Test Cases, Regression Testing",
+                    "Game Design": "Level Design, Game Mechanics, UI/UX",
+                    "Tools": "Jira, Perforce, Git, Debugging Tools"
+                },
+                si: {
+                    "Game Development": [
+                        { n: "Python", src: "assets/icons/python.png" },
+                        { n: "Java", src: "assets/icons/java.png" }
+                    ],
+                    "QA & Development Tools": [
+                        { n: "Jira", src: "assets/icons/Jira.png" },
+                        { n: "Git", src: "assets/icons/git-logo.png" },
+                        { n: "GitHub", src: "assets/icons/github.png" },
+                        { n: "Visual Studio Code", src: "assets/icons/vscode.png" },
+                        { n: "Linux", src: "assets/icons/linux.png" }
+                    ]
+                },
+                p: [
+                    { t: "3D Platformer Game", d: "Unity-based platformer with physics puzzles and dynamic lighting", l: "#" },
+                    { t: "Mobile Puzzle Game", d: "Cross-platform puzzle game with progressive difficulty", l: "#" },
+                    { t: "QA Testing Portfolio", d: "Comprehensive testing documentation and bug reports", l: "#" }
+                ]
+            },
+            
+            s: {
+                t: "Anshuman",
+                s: "Systems Developer",
+                a: "I'm a Computer Engineering student focused on systems programming and infrastructure development. I have experience with low-level programming, operating systems, and building robust, scalable systems that power modern applications.",
+                sk: {
+                    "Systems Programming": "C/C++, Assembly, Operating Systems",
+                    "Infrastructure": "Linux, Docker, Kubernetes, Cloud Services",
+                    "Networking": "TCP/IP, Network Programming, Protocols",
+                    "Database Systems": "SQL, Database Design, Performance Tuning",
+                    "DevOps": "CI/CD, Monitoring, Performance Optimization"
+                },
+                si: {
+                    "Systems Programming": [
+                        { n: "Linux", src: "assets/icons/linux.png" },
+                        { n: "Python", src: "assets/icons/python.png" }
+                    ],
+                    "Infrastructure & DevOps": [
+                        { n: "Git", src: "assets/icons/git-logo.png" },
+                        { n: "GitHub", src: "assets/icons/github.png" }
+                    ]
+                },
+                p: [
+                    { t: "Custom OS Kernel", d: "Minimal operating system with memory management", l: "#" },
+                    { t: "Network Protocol Implementation", d: "Custom networking protocol with error handling", l: "#" },
+                    { t: "Distributed File System", d: "Fault-tolerant distributed storage system", l: "#" }
+                ]
+            }
+        };
+
+        // Get URL parameter with fallback
+        function getParam(name) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(name) || 'g'; // Default to 'g' (general)
         }
-        
-        // Update projects
-        const workList = document.querySelector('.work-list');
-        workList.innerHTML = '';
-        content.projects.forEach(project => {
-            const workDiv = document.createElement('div');
-            workDiv.className = 'work';
-            workDiv.innerHTML = `
+
+        // Update content based on configuration
+        function updateContent(spec) {
+            const config = pc[spec] || pc.g; // Fallback to general
+            
+            // Clear and retype name
+            document.getElementById('typing-text').textContent = '';
+            typeText(config.t);
+            
+            // Update subtitle
+            document.querySelector('.header-text p').textContent = config.s;
+            
+            // Update about description
+            document.querySelector('.desc').textContent = config.a;
+            
+            // Update skills in About section
+            const skillsList = document.querySelector('#skills ul');
+            skillsList.innerHTML = '';
+            Object.entries(config.sk).forEach(([skill, description]) => {
+                const li = document.createElement('li');
+                li.innerHTML = `<span>${skill}</span><br>${description}`;
+                skillsList.appendChild(li);
+            });
+            
+            // Update skill icons sections
+            if (config.si) {
+                const skillsContainer = document.querySelector('.skills-list');
+                skillsContainer.innerHTML = '';
+                
+                Object.entries(config.si).forEach(([categoryName, icons]) => {
+                    const skillDiv = document.createElement('div');
+                    skillDiv.innerHTML = `
+                        <h2>${categoryName}</h2>
+                        <div class="icon-row">
+                            ${icons.map(icon => 
+                                `<img src="${icon.src}" alt="${icon.n}" title="${icon.n}">`
+                            ).join('')}
+                        </div>
+                    `;
+                    skillsContainer.appendChild(skillDiv);
+                });
+            }
+            
+            // Update projects
+            const workList = document.querySelector('.work-list');
+            workList.innerHTML = '';
+            config.p.forEach(project => {
+                const workDiv = document.createElement('div');
+                workDiv.className = 'work';
+                workDiv.innerHTML = `
                     <img src="assets/placeholder.png" alt="">
                     <div class="layer">
-                        <h3>${project.title}</h3>
-                        <p>${project.description}</p>
-                        <a href="${project.link}"><img src="assets/icons/link.png" alt="Link"></a>
+                        <h3>${project.t}</h3>
+                        <p>${project.d}</p>
+                        <a href="${project.l}"><img src="assets/icons/link.png" alt="Link"></a>
                     </div>
                 `;
                 workList.appendChild(workDiv);
@@ -285,17 +414,17 @@
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
-            const specialization = getUrlParameter('spec');
-            updatePortfolioContent(specialization);
+            const specialization = getParam('v'); // Changed from 'spec' to 'v' for stealth
+            updateContent(specialization);
             
             // Update page title
             const titles = {
-                general: 'Anshuman Dhillon - Portfolio',
-                webdev: 'Anshuman Dhillon - Web Developer',
-                gamedev: 'Anshuman Dhillon - Game Developer', 
-                sysdev: 'Anshuman Dhillon - Systems Developer'
+                g: 'Anshuman Dhillon - Portfolio',
+                w: 'Anshuman Dhillon - Web Developer',
+                gd: 'Anshuman Dhillon - Game Developer', 
+                s: 'Anshuman Dhillon - Systems Developer'
             };
-            document.title = titles[specialization] || titles.general;
+            document.title = titles[specialization] || titles.g;
         });
     </script>
 
