@@ -197,39 +197,175 @@
         }
     </script>
 
+    <script src="portfolio-config.js"></script>
     <script>
-        const text = "Anshuman";
-        const span = document.getElementById("typing-text");
-        let i = 0;
-
-        function type() {
-            if (i < text.length) {
-                span.textContent += text.charAt(i);
-                i++;
-                setTimeout(type, 150); // typing speed
-            }
+        // Get URL parameter
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name) || 'general';
         }
 
-        type();
+        // Update content based on specialization
+        function updatePortfolioContent(spec) {
+            if (!window.portfolioContent || !window.portfolioContent[spec]) return;
+            
+            const content = window.portfolioContent[spec];
+            
+            // Clear and retype name
+            document.getElementById('typing-text').textContent = '';
+            typeText(content.title);
+            
+            // Update subtitle
+            document.querySelector('.header-text p').textContent = content.subtitle;
+            
+            // Update about description
+            document.querySelector('.desc').textContent = content.about;
+            
+            // Update skills in About section
+            const skillsList = document.querySelector('#skills ul');
+            skillsList.innerHTML = '';
+            Object.entries(content.skills).forEach(([skill, description]) => {
+                const li = document.createElement('li');
+                li.innerHTML = `<span>${skill}</span><br>${description}`;
+                skillsList.appendChild(li);
+            });
+            
+            // Update projects
+            const workList = document.querySelector('.work-list');
+            workList.innerHTML = '';
+            content.projects.forEach(project => {
+                const workDiv = document.createElement('div');
+                workDiv.className = 'work';
+                workDiv.innerHTML = `
+                    <img src="assets/placeholder.png" alt="">
+                    <div class="layer">
+                        <h3>${project.title}</h3>
+                        <p>${project.description}</p>
+                        <a href="${project.link}"><img src="assets/icons/link.png" alt="Link"></a>
+                    </div>
+                `;
+                workList.appendChild(workDiv);
+            });
+        }
+
+        // Typing animation function
+        function typeText(text) {
+            const span = document.getElementById('typing-text');
+            let i = 0;
+            
+            function type() {
+                if (i < text.length) {
+                    span.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, 150);
+                }
+            }
+            
+            type();
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const specialization = getUrlParameter('spec');
+            updatePortfolioContent(specialization);
+            
+            // Update page title
+            const titles = {
+                general: 'Anshuman Dhillon - Portfolio',
+                webdev: 'Anshuman Dhillon - Portfolio',
+                gamedev: 'Anshuman Dhillon - Portfolio', 
+                sysdev: 'Anshuman Dhillon - Portfolio'
+            };
+            document.title = titles[specialization] || titles.general;
+        });
     </script>
 
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbzvUDKCLO3J5wrBqXInByVLVJ7WBsvfC6BMsFVbAWKljV1K32_JVIMoHV5_lbrIXck9/exec'
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById("msg")
-
+        const submitBtn = form.querySelector('button[type="submit"]')
+        
+        const originalBtnText = submitBtn.textContent
+        let isSubmitting = false
+        let cooldownTimer = null
+        
         form.addEventListener('submit', e => {
             e.preventDefault()
+            
+            if (isSubmitting) return
+            
+            isSubmitting = true
+            
+            // Update button with loading state
+            submitBtn.disabled = true
+            submitBtn.classList.add('loading')
+            submitBtn.textContent = 'Sending...'
+            
+            // Show immediate feedback
+            msg.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="width: 16px; height: 16px; border: 2px solid #61b752; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                    Sending your message...
+                </div>
+            `
+            msg.style.color = "#61b752"
+            
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => {
-                msg.innerHTML = "Message Sent Successfully!"
-                setTimeout(function(){
-                    msg.innerHTML = ""
-                }, 5000)
-                form.reset()
+                if (response.ok) {
+                    msg.innerHTML = "✅ Message sent successfully!"
+                    msg.style.color = "#61b752"
+                    form.reset()
+                    
+                    // Start cooldown period (prevents rapid successive submissions)
+                    startCooldown(3000) // 3 second cooldown
+                } else {
+                    throw new Error('Network response was not ok')
+                }
             })
-            .catch(error => console.error('Error!', error.message))
+            .catch(error => {
+                console.error('Error!', error.message)
+                msg.innerHTML = "❌ Failed to send message. Please try again."
+                msg.style.color = "#ff6b6b"
+                
+                // Shorter cooldown on error
+                startCooldown(1000)
+            })
+            .finally(() => {
+                // Clear message after 6 seconds
+                setTimeout(() => {
+                    msg.innerHTML = ""
+                }, 6000)
+            })
         })
+        
+        function startCooldown(duration) {
+            // Clear any existing cooldown
+            if (cooldownTimer) clearTimeout(cooldownTimer)
+            
+            cooldownTimer = setTimeout(() => {
+                resetButton()
+            }, duration)
+        }
+        
+        function resetButton() {
+            isSubmitting = false
+            submitBtn.disabled = false
+            submitBtn.classList.remove('loading')
+            submitBtn.textContent = originalBtnText
+            cooldownTimer = null
+        }
+        
+        // Add spinner keyframes if not already in CSS
+        const style = document.createElement('style')
+        style.textContent = `
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        `
+        document.head.appendChild(style)
     </script>
 
     <script>
