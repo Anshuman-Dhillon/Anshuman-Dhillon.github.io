@@ -199,44 +199,63 @@
 
     <script src="portfolio-config.js"></script>
     <script>
-        // Get URL parameter
-        function getUrlParameter(name) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(name) || 'general';
-        }
+    // Get URL parameter
+    function getUrlParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name) || 'general';
+    }
 
-        // Update content based on specialization
-        function updatePortfolioContent(spec) {
-            if (!window.portfolioContent || !window.portfolioContent[spec]) return;
+    // Update content based on specialization
+    function updatePortfolioContent(spec) {
+        if (!window.portfolioContent || !window.portfolioContent[spec]) return;
+        
+        const content = window.portfolioContent[spec];
+        
+        // Clear and retype name
+        document.getElementById('typing-text').textContent = '';
+        typeText(content.title);
+        
+        // Update subtitle
+        document.querySelector('.header-text p').textContent = content.subtitle;
+        
+        // Update about description
+        document.querySelector('.desc').textContent = content.about;
+        
+        // Update skills in About section
+        const skillsList = document.querySelector('#skills ul');
+        skillsList.innerHTML = '';
+        Object.entries(content.skills).forEach(([skill, description]) => {
+            const li = document.createElement('li');
+            li.innerHTML = `<span>${skill}</span><br>${description}`;
+            skillsList.appendChild(li);
+        });
+        
+        // Update skill icons sections
+        if (content.skillIcons) {
+            const skillsContainer = document.querySelector('.skills-list');
+            skillsContainer.innerHTML = '';
             
-            const content = window.portfolioContent[spec];
-            
-            // Clear and retype name
-            document.getElementById('typing-text').textContent = '';
-            typeText(content.title);
-            
-            // Update subtitle
-            document.querySelector('.header-text p').textContent = content.subtitle;
-            
-            // Update about description
-            document.querySelector('.desc').textContent = content.about;
-            
-            // Update skills in About section
-            const skillsList = document.querySelector('#skills ul');
-            skillsList.innerHTML = '';
-            Object.entries(content.skills).forEach(([skill, description]) => {
-                const li = document.createElement('li');
-                li.innerHTML = `<span>${skill}</span><br>${description}`;
-                skillsList.appendChild(li);
+            Object.entries(content.skillIcons).forEach(([categoryName, icons]) => {
+                const skillDiv = document.createElement('div');
+                skillDiv.innerHTML = `
+                    <h2>${categoryName}</h2>
+                    <div class="icon-row">
+                        ${icons.map(icon => 
+                            `<img src="${icon.src}" alt="${icon.name}" title="${icon.name}">`
+                        ).join('')}
+                    </div>
+                `;
+                skillsContainer.appendChild(skillDiv);
             });
-            
-            // Update projects
-            const workList = document.querySelector('.work-list');
-            workList.innerHTML = '';
-            content.projects.forEach(project => {
-                const workDiv = document.createElement('div');
-                workDiv.className = 'work';
-                workDiv.innerHTML = `
+        }
+        
+        // Update projects
+        const workList = document.querySelector('.work-list');
+        workList.innerHTML = '';
+        content.projects.forEach(project => {
+            const workDiv = document.createElement('div');
+            workDiv.className = 'work';
+            workDiv.innerHTML = `
                     <img src="assets/placeholder.png" alt="">
                     <div class="layer">
                         <h3>${project.title}</h3>
@@ -272,9 +291,9 @@
             // Update page title
             const titles = {
                 general: 'Anshuman Dhillon - Portfolio',
-                webdev: 'Anshuman Dhillon - Portfolio',
-                gamedev: 'Anshuman Dhillon - Portfolio', 
-                sysdev: 'Anshuman Dhillon - Portfolio'
+                webdev: 'Anshuman Dhillon - Web Developer',
+                gamedev: 'Anshuman Dhillon - Game Developer', 
+                sysdev: 'Anshuman Dhillon - Systems Developer'
             };
             document.title = titles[specialization] || titles.general;
         });
