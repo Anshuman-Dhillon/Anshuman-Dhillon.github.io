@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Personal Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <video autoplay muted loop playsinline id="bg-video">
         <source src="assets/background.mp4" type="video/mp4">
@@ -46,8 +48,8 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p class="desc">I'm a Computer Engineering student at TMU 
-                        with a strong passion for software development, 
+                    <p class="desc">I'm a Computer Engineering student at TMU
+                        with a strong passion for software development,
                         particularly in full-stack development. I have been
                         exploring various technologies and frameworks to build
                         dynamic and responsive web applications. I have showcased
@@ -70,12 +72,14 @@
                     </div>
                     <div class="tab-contents" id="experience">
                         <ul>
-                            <li><span>February 2025 - April 2025</span><br>Quality Assurance (Game Tester), Dough Dough Digital Inc.</li>
+                            <li><span>February 2025 - April 2025</span><br>Quality Assurance (Game Tester), Dough Dough
+                                Digital Inc.</li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="education">
                         <ul>
-                            <li><span>2023 - 2028</span><br>Bachelor of Engineering (BEng): Computer Engineering, Toronto Metropolitan University</li>
+                            <li><span>2023 - 2028</span><br>Bachelor of Engineering (BEng): Computer Engineering,
+                                Toronto Metropolitan University</li>
                         </ul>
                     </div>
                 </div>
@@ -119,32 +123,9 @@
         <div class="container">
             <h1 class="sub-title">My Projects</h1>
             <div class="work-list">
-                <div class="work">
-                    <img src="assets/placeholder.png" alt="">
-                    <div class="layer">
-                        <h3>Real-Time Digit Classification AI</h3>
-                        <p></p>
-                        <a href="#"><img src="assets/icons/link.png" alt="Link"></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="assets/placeholder.png" alt="">
-                    <div class="layer">
-                        <h3>3D Model Sharing Website</h3>
-                        <p></p>
-                        <a href="#"><img src="assets/icons/link.png" alt="Link"></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="assets/placeholder.png" alt="">
-                    <div class="layer">
-                        <h3>Sokoban Game</h3>
-                        <p></p>
-                        <a href="#"><img src="assets/icons/link.png" alt="Link"></a>
-                    </div>
-                </div>
+                <!-- Projects will be dynamically generated here -->
             </div>
-            <a href="#" class="btn">See more projects</a>
+            <a href="https://github.com/Anshuman-Dhillon" class="btn">See more projects</a>
         </div>
     </div>
 
@@ -156,8 +137,10 @@
                     <p><img src="assets/icons/email.png" alt="">anshumandhillon@gmail.com</p>
 
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/anshuman-dhillon/" target="_blank"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
-                        <a href="https://github.com/Anshuman-Dhillon" target="_blank"><img src="assets/icons/github.png" alt="GitHub"></a>
+                        <a href="https://www.linkedin.com/in/anshuman-dhillon/" target="_blank"><img
+                                src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+                        <a href="https://github.com/Anshuman-Dhillon" target="_blank"><img src="assets/icons/github.png"
+                                alt="GitHub"></a>
                     </div>
                 </div>
                 <div class="contact-right">
@@ -175,7 +158,8 @@
 
     <footer class="copyright">
         <p>Copyright © <span id="year"></span> Anshuman Dhillon.</p>
-        <p>Background GIF from <a href="https://pixabay.com/gifs/tech-background-design-pattern-18050/" target="_blank">Pixabay</a></p>
+        <p>Background GIF from <a href="https://pixabay.com/gifs/tech-background-design-pattern-18050/"
+                target="_blank">Pixabay</a></p>
         <p>All product names, logos, and brands are property of their respective owners.</p>
     </footer>
 
@@ -183,12 +167,12 @@
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
 
-        function opentab(tabname){
-            for(tablink of tablinks){
+        function opentab(tabname) {
+            for (tablink of tablinks) {
                 tablink.classList.remove("active-link");
             }
 
-            for(tabcontent of tabcontents){
+            for (tabcontent of tabcontents) {
                 tabcontent.classList.remove("active-tab");
             }
 
@@ -198,32 +182,28 @@
     </script>
 
     <script>
-        // Embedded portfolio configurations (obfuscated)
         const pc = {
             g: {
                 t: "Anshuman",
                 s: "Ambitious Learner",
-                a: "I'm a Computer Engineering student at TMU with a strong passion for software development, particularly in full-stack development. I have been exploring various technologies and frameworks to build dynamic and responsive web applications. I have showcased my skills through several projects, which you can find below.",
+                a: "I'm a Computer Engineering student at TMU with a strong passion for software development, particularly in low-level systems programming.",
                 sk: {
-                    "HTML/CSS": "Responsive Web Design, Flexbox, Grid, Animations",
-                    "JavaScript": "DOM Manipulation, Fetch API",
-                    "Front-End": "React (Component-based UI, State Management)",
-                    "Back-End": "Node.js, Express, REST API",
-                    "Databases": "NoSQL Databases (MongoDB/Mongoose)"
+                    "C/C++": "Low-level systems, Computer Architecture, Computer Graphics",
+                    "Java": "Object-Oriented Programming, Data Structures, Algorithms",
+                    "VHDL": "Digital Logic Design, FPGA Programming",
                 },
                 si: {
                     "Programming Languages": [
-                        { n: "HTML", src: "assets/icons/HTML.png" },
-                        { n: "CSS", src: "assets/icons/css.png" },
-                        { n: "JavaScript", src: "assets/icons/js.png" },
-                        { n: "Python", src: "assets/icons/python.png" },
-                        { n: "Java", src: "assets/icons/java.png" }
+                        { n: "C", src: "assets/icons/c.png" },
+                        { n: "C++", src: "assets/icons/cpp.png" },
+                        { n: "Java", src: "assets/icons/java.png" },
                     ],
                     "Technologies, Tools & Libraries": [
                         { n: "Visual Studio Code", src: "assets/icons/vscode.png" },
-                        { n: "Node.js", src: "assets/icons/nodejs.png" },
-                        { n: "React", src: "assets/icons/React.png" },
-                        { n: "MongoDB", src: "assets/icons/MongoDB.png" },
+                        { n: "Visual Studio", src: "assets/icons/vs.png" },
+                        { n: "Docker", src: "assets/icons/docker.png" },
+                        { n: "Vulkan", src: "assets/icons/vulkan.png" },
+                        { n: "OpenGL", src: "assets/icons/openGL.png" },
                         { n: "Git", src: "assets/icons/git-logo.png" },
                         { n: "GitHub", src: "assets/icons/github.png" },
                         { n: "Jira", src: "assets/icons/Jira.png" },
@@ -231,22 +211,20 @@
                     ]
                 },
                 p: [
-                    { t: "Real-Time Digit Classification AI", d: "Machine learning model for real-time digit recognition", l: "#" },
-                    { t: "3D Model Sharing Website", d: "Full-stack platform for 3D model sharing and viewing", l: "#" },
-                    { t: "Sokoban Game", d: "Classic puzzle game with modern implementation", l: "#" }
+                    { t: "Retro Game Emulator", d: "Used OpenGL and Dear ImGui to make a GameBoy Emulator that runs commercial ROMs", l: "https://github.com/Anshuman-Dhillon/Retro-Game-Emulator", m: "assets/projects/emulator.mp4", mt: "video" },
+                    { t: "Real-Time RayTracer", d: "Built with the Walnut framework to render 3D graphics in real-time", l: "https://github.com/Anshuman-Dhillon/Real-Time-RayTracer", m: "assets/projects/Raytracing-demo.mp4", mt: "video" },
                 ]
             },
-            
+
             w: {
                 t: "Anshuman",
-                s: "Full-Stack Web Developer", 
+                s: "Ambitious Learner",
                 a: "I'm a Computer Engineering student specializing in modern web development. With expertise in React, Node.js, and full-stack architecture, I build scalable web applications that deliver exceptional user experiences. My focus is on creating responsive, performant, and accessible web solutions.",
                 sk: {
-                    "Frontend": "React, Next.js, TypeScript, Tailwind CSS",
-                    "Backend": "Node.js, Express, REST APIs, GraphQL",
-                    "Database": "MongoDB, PostgreSQL, Redis",
-                    "DevOps": "Docker, AWS, CI/CD, Git",
-                    "Testing": "Jest, Cypress, Unit & Integration Testing"
+                    "Frontend": "React, Next.js, Vue.js, HTML/CSS",
+                    "Backend": "Node.js, Express, REST APIs, Firebase",
+                    "Database": "MongoDB, Firebase",
+                    "DevOps": "AWS, CI/CD, Git",
                 },
                 si: {
                     "Frontend Technologies": [
@@ -264,15 +242,13 @@
                     ]
                 },
                 p: [
-                    { t: "E-Commerce Platform", d: "Full-stack online store with payment integration and admin dashboard", l: "#" },
-                    { t: "Real-Time Chat Application", d: "WebSocket-based messaging platform with user authentication", l: "#" },
-                    { t: "Task Management System", d: "Collaborative project management tool with real-time updates", l: "#" }
+                    { t: "E-Commerce Platform", d: "Full-stack 3D model marketplace with a catalog and payment system", l: "#", m: "assets/projects/ecommerce-demo.mp4", mt: "video" },
                 ]
             },
-            
+
             gd: {
                 t: "Anshuman",
-                s: "Game Developer & QA Specialist",
+                s: "Ambitious Learner",
                 a: "I'm a Computer Engineering student with a passion for game development and quality assurance. With hands-on experience as a QA Game Tester at Dough Dough Digital Inc., I combine technical programming skills with a deep understanding of game mechanics and user experience.",
                 sk: {
                     "Game Engines": "Unity, Unreal Engine, Godot",
@@ -295,62 +271,53 @@
                     ]
                 },
                 p: [
-                    { t: "3D Platformer Game", d: "Unity-based platformer with physics puzzles and dynamic lighting", l: "#" },
-                    { t: "Mobile Puzzle Game", d: "Cross-platform puzzle game with progressive difficulty", l: "#" },
-                    { t: "QA Testing Portfolio", d: "Comprehensive testing documentation and bug reports", l: "#" }
-                ]
-            },
-            
-            s: {
-                t: "Anshuman",
-                s: "Systems Developer",
-                a: "I'm a Computer Engineering student focused on systems programming and infrastructure development. I have experience with low-level programming, operating systems, and building robust, scalable systems that power modern applications.",
-                sk: {
-                    "Systems Programming": "C/C++, Assembly, Operating Systems",
-                    "Infrastructure": "Linux, Docker, Kubernetes, Cloud Services",
-                    "Networking": "TCP/IP, Network Programming, Protocols",
-                    "Database Systems": "SQL, Database Design, Performance Tuning",
-                    "DevOps": "CI/CD, Monitoring, Performance Optimization"
-                },
-                si: {
-                    "Systems Programming": [
-                        { n: "Linux", src: "assets/icons/linux.png" },
-                        { n: "Python", src: "assets/icons/python.png" }
-                    ],
-                    "Infrastructure & DevOps": [
-                        { n: "Git", src: "assets/icons/git-logo.png" },
-                        { n: "GitHub", src: "assets/icons/github.png" }
-                    ]
-                },
-                p: [
-                    { t: "Custom OS Kernel", d: "Minimal operating system with memory management", l: "#" },
-                    { t: "Network Protocol Implementation", d: "Custom networking protocol with error handling", l: "#" },
-                    { t: "Distributed File System", d: "Fault-tolerant distributed storage system", l: "#" }
+                    { t: "3D Platformer Game", d: "Unity-based platformer with physics puzzles and dynamic lighting", l: "#", m: "assets/projects/platformer-gameplay.mp4", mt: "video" },
+                    { t: "Mobile Puzzle Game", d: "Cross-platform puzzle game with progressive difficulty", l: "#", m: "assets/projects/puzzle-game.png", mt: "image" },
+                    { t: "QA Testing Portfolio", d: "Comprehensive testing documentation and bug reports", l: "#", m: "assets/projects/qa-portfolio.jpg", mt: "image" }
                 ]
             }
         };
 
-        // Get URL parameter with fallback
-        function getParam(name) {
-            const params = new URLSearchParams(window.location.search);
-            return params.get(name) || 'g'; // Default to 'g' (general)
+        function debugMediaFiles() {
+            const config = pc[getParam('v')] || pc.g;
+
+            config.p.forEach((project, index) => {
+                if (project.m) {
+                    console.log(`Project ${index + 1}: ${project.t}`);
+                    console.log(`Media file: ${project.m}`);
+                    console.log(`Media type: ${project.mt}`);
+
+                    // Test if the file exists by trying to load it
+                    if (project.mt === 'image') {
+                        const img = new Image();
+                        img.onload = () => console.log(`✅ Image loaded: ${project.m}`);
+                        img.onerror = () => console.log(`❌ Image failed: ${project.m}`);
+                        img.src = project.m;
+                    } else if (project.mt === 'video') {
+                        const video = document.createElement('video');
+                        video.onloadeddata = () => console.log(`✅ Video loaded: ${project.m}`);
+                        video.onerror = () => console.log(`❌ Video failed: ${project.m}`);
+                        video.src = project.m;
+                    }
+                }
+            });
         }
 
-        // Update content based on configuration
+        function getParam(name) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(name) || 'g';
+        }
+
         function updateContent(spec) {
-            const config = pc[spec] || pc.g; // Fallback to general
-            
-            // Clear and retype name
+            const config = pc[spec] || pc.g;
+
             document.getElementById('typing-text').textContent = '';
             typeText(config.t);
-            
-            // Update subtitle
+
             document.querySelector('.header-text p').textContent = config.s;
-            
-            // Update about description
+
             document.querySelector('.desc').textContent = config.a;
-            
-            // Update skills in About section
+
             const skillsList = document.querySelector('#skills ul');
             skillsList.innerHTML = '';
             Object.entries(config.sk).forEach(([skill, description]) => {
@@ -358,34 +325,53 @@
                 li.innerHTML = `<span>${skill}</span><br>${description}`;
                 skillsList.appendChild(li);
             });
-            
-            // Update skill icons sections
+
             if (config.si) {
                 const skillsContainer = document.querySelector('.skills-list');
                 skillsContainer.innerHTML = '';
-                
+
                 Object.entries(config.si).forEach(([categoryName, icons]) => {
                     const skillDiv = document.createElement('div');
                     skillDiv.innerHTML = `
                         <h2>${categoryName}</h2>
                         <div class="icon-row">
-                            ${icons.map(icon => 
-                                `<img src="${icon.src}" alt="${icon.n}" title="${icon.n}">`
-                            ).join('')}
+                            ${icons.map(icon =>
+                        `<img src="${icon.src}" alt="${icon.n}" title="${icon.n}">`
+                    ).join('')}
                         </div>
                     `;
                     skillsContainer.appendChild(skillDiv);
                 });
             }
-            
-            // Update projects
+
+            // Fixed dynamic project generation with custom media
             const workList = document.querySelector('.work-list');
             workList.innerHTML = '';
+
             config.p.forEach(project => {
                 const workDiv = document.createElement('div');
                 workDiv.className = 'work';
+
+                // Generate media element - always try to use custom media first
+                let mediaElement = '';
+                
+                if (project.m && project.mt === 'video') {
+                    // Video element for MP4 files
+                    mediaElement = `<video class="media-background" autoplay muted loop playsinline onError="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <source src="${project.m}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <img class="media-background" src="assets/placeholder.png" alt="${project.t}" style="display:none;">`;
+                } else if (project.m) {
+                    // Image element for GIFs, PNGs, JPGs, etc.
+                    mediaElement = `<img class="media-background" src="${project.m}" alt="${project.t}" onError="this.src='assets/placeholder.png';">`;
+                } else {
+                    // Fallback to placeholder only if no media source is provided
+                    mediaElement = `<img class="media-background" src="assets/placeholder.png" alt="${project.t}">`;
+                }
+
                 workDiv.innerHTML = `
-                    <img src="assets/placeholder.png" alt="">
+                    ${mediaElement}
                     <div class="layer">
                         <h3>${project.t}</h3>
                         <p>${project.d}</p>
@@ -394,13 +380,16 @@
                 `;
                 workList.appendChild(workDiv);
             });
+            
+            // Debug media files after content update
+            console.log('Media debug for current config:');
+            debugMediaFiles();
         }
 
-        // Typing animation function
         function typeText(text) {
             const span = document.getElementById('typing-text');
             let i = 0;
-            
+
             function type() {
                 if (i < text.length) {
                     span.textContent += text.charAt(i);
@@ -408,23 +397,24 @@
                     setTimeout(type, 150);
                 }
             }
-            
+
             type();
         }
 
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const specialization = getParam('v'); // Changed from 'spec' to 'v' for stealth
+        document.addEventListener('DOMContentLoaded', function () {
+            const specialization = getParam('v');
             updateContent(specialization);
-            
-            // Update page title
+
             const titles = {
                 g: 'Anshuman Dhillon - Portfolio',
-                w: 'Anshuman Dhillon - Web Developer',
-                gd: 'Anshuman Dhillon - Game Developer', 
-                s: 'Anshuman Dhillon - Systems Developer'
+                w: 'Anshuman Dhillon - Portfolio',
+                gd: 'Anshuman Dhillon - Portfolio',
+                s: 'Anshuman Dhillon - Portfolio'
             };
             document.title = titles[specialization] || titles.g;
+
+            console.log('Current specialization:', specialization);
+            console.log('Current config:', pc[specialization] || pc.g);
         });
     </script>
 
@@ -433,23 +423,23 @@
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById("msg")
         const submitBtn = form.querySelector('button[type="submit"]')
-        
+
         const originalBtnText = submitBtn.textContent
         let isSubmitting = false
         let cooldownTimer = null
-        
+
         form.addEventListener('submit', e => {
             e.preventDefault()
-            
+
             if (isSubmitting) return
-            
+
             isSubmitting = true
-            
+
             // Update button with loading state
             submitBtn.disabled = true
             submitBtn.classList.add('loading')
             submitBtn.textContent = 'Sending...'
-            
+
             // Show immediate feedback
             msg.innerHTML = `
                 <div style="display: flex; align-items: center; gap: 8px;">
@@ -458,45 +448,45 @@
                 </div>
             `
             msg.style.color = "#61b752"
-            
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                if (response.ok) {
-                    msg.innerHTML = "✅ Message sent successfully!"
-                    msg.style.color = "#61b752"
-                    form.reset()
-                    
-                    // Start cooldown period (prevents rapid successive submissions)
-                    startCooldown(3000) // 3 second cooldown
-                } else {
-                    throw new Error('Network response was not ok')
-                }
-            })
-            .catch(error => {
-                console.error('Error!', error.message)
-                msg.innerHTML = "❌ Failed to send message. Please try again."
-                msg.style.color = "#ff6b6b"
-                
-                // Shorter cooldown on error
-                startCooldown(1000)
-            })
-            .finally(() => {
-                // Clear message after 6 seconds
-                setTimeout(() => {
-                    msg.innerHTML = ""
-                }, 6000)
-            })
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    if (response.ok) {
+                        msg.innerHTML = "✅ Message sent successfully!"
+                        msg.style.color = "#61b752"
+                        form.reset()
+
+                        // Start cooldown period (prevents rapid successive submissions)
+                        startCooldown(3000) // 3 second cooldown
+                    } else {
+                        throw new Error('Network response was not ok')
+                    }
+                })
+                .catch(error => {
+                    console.error('Error!', error.message)
+                    msg.innerHTML = "❌ Failed to send message. Please try again."
+                    msg.style.color = "#ff6b6b"
+
+                    // Shorter cooldown on error
+                    startCooldown(1000)
+                })
+                .finally(() => {
+                    // Clear message after 6 seconds
+                    setTimeout(() => {
+                        msg.innerHTML = ""
+                    }, 6000)
+                })
         })
-        
+
         function startCooldown(duration) {
             // Clear any existing cooldown
             if (cooldownTimer) clearTimeout(cooldownTimer)
-            
+
             cooldownTimer = setTimeout(() => {
                 resetButton()
             }, duration)
         }
-        
+
         function resetButton() {
             isSubmitting = false
             submitBtn.disabled = false
@@ -504,7 +494,7 @@
             submitBtn.textContent = originalBtnText
             cooldownTimer = null
         }
-        
+
         // Add spinner keyframes if not already in CSS
         const style = document.createElement('style')
         style.textContent = `
@@ -520,4 +510,5 @@
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
+
 </html>
