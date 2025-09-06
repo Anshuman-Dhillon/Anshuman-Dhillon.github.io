@@ -652,11 +652,23 @@ form textarea {
 }
 
 /* Auto-adjust for different numbers of projects */
+
+/* Center a single project panel in the grid, both horizontally and vertically */
 .work-list:has(.work:nth-child(1):nth-last-child(1)) {
-    /* 1 project - center it */
-    justify-items: center;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 600px;
+    margin: 50px auto 0 auto;
+    min-height: 500px;
+    gap: 0;
+}
+
+.work-list:has(.work:nth-child(1):nth-last-child(1)) .work {
+    width: 100%;
     max-width: 550px;
-    margin: 50px auto 0;
+    margin: 0 auto;
 }
 
 .work-list:has(.work:nth-child(2):nth-last-child(1)) {
